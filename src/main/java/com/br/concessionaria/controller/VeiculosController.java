@@ -34,4 +34,9 @@ public class VeiculosController {
         return veiculoEncontrado.isPresent() ? ResponseEntity.ok(veiculoEncontrado.get()) : ResponseEntity.notFound().build();
     }
 
+    @PostMapping
+    public ResponseEntity<Veiculo> cadastrarVeiculo(@RequestBody Veiculo veiculo) {
+        return ResponseEntity.ok(veiculosService.cadastrarVeiculo(veiculo));
+    }
+
 }
