@@ -29,4 +29,8 @@ public class VeiculosService {
     public Optional<Veiculo> buscarVeiculo(Integer idVeiculo) {
         return veiculosRepos.findById(idVeiculo);
     }
+
+    public Veiculo cadastrarVeiculo(Veiculo veiculo) {
+        return veiculosRepos.save(veiculo);
+    }
 }
