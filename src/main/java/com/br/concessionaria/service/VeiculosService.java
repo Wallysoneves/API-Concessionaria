@@ -1,4 +1,4 @@
-package com.br.concessionaria.model.service;
+package com.br.concessionaria.service;
 
 import com.br.concessionaria.model.Veiculo;
 import com.br.concessionaria.repository.VeiculosRepos;
