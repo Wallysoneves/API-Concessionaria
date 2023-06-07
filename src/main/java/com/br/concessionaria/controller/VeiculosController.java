@@ -39,4 +39,14 @@ public class VeiculosController {
         return ResponseEntity.ok(veiculosService.cadastrarVeiculo(veiculo));
     }
 
+    @PutMapping
+    public ResponseEntity<?> alterarVeiculo(@RequestBody Veiculo veiculo) {
+
+        try {
+            return ResponseEntity.ok(veiculosService.alterarVeiculo(veiculo));
+
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

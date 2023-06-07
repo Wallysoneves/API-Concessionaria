@@ -33,4 +33,12 @@ public class VeiculosService {
     public Veiculo cadastrarVeiculo(Veiculo veiculo) {
         return veiculosRepos.save(veiculo);
     }
+
+    public Veiculo alterarVeiculo(Veiculo veiculo) {
+        if (! veiculosRepos.existsById(veiculo.getId()) ) {
+            throw new IllegalArgumentException("O veiculo não foi encontrado!");
+        }
+
+        return veiculosRepos.save(veiculo);
+    }
 }
