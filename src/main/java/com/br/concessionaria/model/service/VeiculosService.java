@@ -41,4 +41,12 @@ public class VeiculosService {
 
         return veiculosRepos.save(veiculo);
     }
+
+    public void deletarVeculo(Integer idVeiculo) {
+        if (! veiculosRepos.existsById(idVeiculo) ) {
+            throw new IllegalArgumentException("O veiculo não foi encontrado!");
+        }
+
+        veiculosRepos.deleteById(idVeiculo);
+    }
 }
