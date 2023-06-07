@@ -49,4 +49,14 @@ public class VeiculosController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<?> deletarVeiculo(@PathVariable("id") Integer idVeiculo) {
+        try {
+            veiculosService.deletarVeculo(idVeiculo);
+            return ResponseEntity.noContent().build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }
