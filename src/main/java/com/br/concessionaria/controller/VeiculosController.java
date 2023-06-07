@@ -1,7 +1,7 @@
 package com.br.concessionaria.controller;
 
 import com.br.concessionaria.model.Veiculo;
-import com.br.concessionaria.model.service.VeiculosService;
+import com.br.concessionaria.service.VeiculosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
