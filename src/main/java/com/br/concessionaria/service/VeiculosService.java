@@ -2,6 +2,7 @@ package com.br.concessionaria.service;
 
 import com.br.concessionaria.model.Veiculo;
 import com.br.concessionaria.repository.VeiculosRepos;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -34,7 +35,7 @@ public class VeiculosService {
         return veiculosRepos.save(veiculo);
     }
 
-    public Veiculo alterarVeiculo(Veiculo veiculo) {
+    public Veiculo alterarVeiculo(@NotNull Veiculo veiculo) {
         if (! veiculosRepos.existsById(veiculo.getId()) ) {
             throw new IllegalArgumentException("O veiculo não foi encontrado!");
         }
