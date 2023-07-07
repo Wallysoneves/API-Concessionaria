@@ -1,5 +1,6 @@
 package com.br.concessionaria.model;
 
+import com.br.concessionaria.model.enuns.EnumStatusVeiculo;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -39,6 +40,10 @@ public class Veiculo {
     @NotBlank(message = "A cor do veículo deve ser informada")
     @Column(name = "cor", nullable = false, length = 50)
     private String cor;
+
+    @NotBlank(message = "O status do veículo deve ser informado")
+    @Column(name = "status", nullable = false, length = 1)
+    private EnumStatusVeiculo status;
 
 
 }
